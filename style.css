@@ -1,0 +1,36 @@
+html {
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.container-grid {
+    width: 20vw;
+    height: 20vw;
+    margin: 0 auto;
+    background-color: black;
+    gap: 1px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.cell {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.disable-pointer {
+    pointer-events: none;
+}
