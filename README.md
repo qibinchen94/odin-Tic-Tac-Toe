@@ -6,7 +6,7 @@ This is the [Tic Tac Toe](https://www.theodinproject.com/paths/full-stack-javasc
 
 ## TODO
 
-- [ ]Allow players to input names
-- [ ]Add start/restart button
-- [ ]Create an AI to play the game
-- [ ]Allow dimension to change
+- [ ] Allow players to input names
+- [ ] Add start/restart button
+- [ ] Create an AI to play the game
+- [ ] Allow dimension to change
