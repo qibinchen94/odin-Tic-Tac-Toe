@@ -5,11 +5,12 @@ const Player = (name, choice) => {
     };
 };
 
-const players = [Player('player1', 'X'),
-                Player('player2', 'O')]
+// const players = [Player('player X', 'X'),
+//                 Player('player O', 'O')]
 
 const game = (() => {
     const dimension = 3;
+    const players = new Array(2);
     let currentPlayerIndex = 0;
     let moveCount = 0;
     const rows = Array(dimension).fill('').map(() => [0, 0]);
@@ -21,9 +22,9 @@ const game = (() => {
     // fill method create references.
     // See: https://stackoverflow.com/questions/41121982/strange-behavior-of-an-array-filled-by-array-prototype-fill
     //  const board = Array(3).fill(Array(3).fill('')); 
-    const gameBoard = Array(dimension).fill('').map(() => Array(dimension).fill(''));
+    let gameBoard = Array(dimension).fill('').map(() => Array(dimension).fill(''));
     
-    const updateBoard = function () {
+    const _updateBoard = function () {
         moveCount++;
         const row = +this.dataset.row;
         const column = +this.dataset.column;
@@ -55,13 +56,41 @@ const game = (() => {
         return false;        
     }
     
-    const getBoard = () => gameBoard;
+    const _startGame = function () {
+        if (!inputs[0].value || !inputs[1].value) {
+            alert("Please enter player's name.");
+            return;
+        } else {
+            players[0] = Player(inputs[0].value, 'X');
+            players[1] = Player(inputs[1].value, 'O');
+            cells.forEach(cell => cell.classList.remove('disable-pointer'));
+            button.textContent = 'Restart';
+            button.removeEventListener('click', _startGame);
+            button.addEventListener('click', _restartGame);
+        }
+    };
     
+    const _restartGame = function () {
+        inputs.forEach(input => input.value = '');
+        cells.forEach(cell => cell.classList.add('disable-pointer'));
+        cells.forEach(cell => cell.textContent = '');
+        button.textContent = 'Start';
+        gameBoard = Array(dimension).fill('').map(() => Array(dimension).fill(''));
+        button.removeEventListener('click', _restartGame);
+        button.addEventListener('click', _startGame);
+    };
+   
+    const inputs = [...document.querySelectorAll('.player-name')];
+
+    const cells = [...document.querySelectorAll('.cell')];
+    cells.forEach(cell => cell.addEventListener('click', _updateBoard.bind(cell)));
+
+    const button = document.querySelector('button.start');
+    button.addEventListener('click', _startGame);
+
+    const getBoard = () => gameBoard;
+
     return {
         getBoard,
-        updateBoard,
     };
 })();
-
-const cells = [...document.querySelectorAll('.cell')];
-cells.forEach(cell => cell.addEventListener('click', game.updateBoard.bind(cell)));
