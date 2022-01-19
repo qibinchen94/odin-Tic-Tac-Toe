@@ -6,7 +6,10 @@ This is the [Tic Tac Toe](https://www.theodinproject.com/paths/full-stack-javasc
 
 ## TODO
 
-- [ ] Allow players to input names
-- [ ] Add start/restart button
+- [x] Allow players to input names
+- [x] Add start/restart button
 - [ ] Create an AI to play the game
 - [ ] Allow dimension to change
+- [ ] PvP, PvE, EvE modes
+- [ ] Better styles
+- [ ] Line crosses winning row/column/diag
