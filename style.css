@@ -10,15 +10,26 @@ html {
 body {
     padding: 0;
     margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.players-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .container-grid {
     width: 20vw;
     height: 20vw;
-    margin: 0 auto;
     background-color: black;
-    gap: 1px;
+    margin: 20px 0;
     display: grid;
+    gap: 1px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
 }
