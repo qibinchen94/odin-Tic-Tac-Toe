@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <title>Tic Tac Toe</title>
@@ -13,12 +15,12 @@
         <div class="player-box">
             <label for="playerX">Player X</label>
             <span>:</span>
-            <input class="player-name" type="text" id="playerX" placeholder="Name">
+            <input value="Player" class="player-name" type="text" id="playerX" placeholder="Name">
         </div>
         <div class="player-box">
             <label for="playerO">Player O</label>
             <span>:</span>
-            <input class="player-name" type="text" id="playerO" placeholder="Name">
+            <input value="AI" class="player-name" type="text" id="playerO" placeholder="Name">
         </div>
     </div>
     <div class="container-grid">
@@ -33,5 +35,11 @@
         <div class="cell disable-pointer" data-row="2" data-column="2"></div>
     </div>
     <button class="start restart">Start</button>
+    <span class="material-icons">
+        perm_identity
+    </span>
+    <span class="material-icons">
+        computer
+    </span>
 </body>
 </html>
