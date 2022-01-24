@@ -8,8 +8,7 @@ This is the [Tic Tac Toe](https://www.theodinproject.com/paths/full-stack-javasc
 
 - [x] Allow players to input names
 - [x] Add start/restart button
-- [ ] Create an AI to play the game
-- [ ] Allow dimension to change
+- [x] Create an AI to play the game
 - [ ] PvP, PvE, EvE modes
 - [ ] Better styles
 - [ ] Line crosses winning row/column/diag
