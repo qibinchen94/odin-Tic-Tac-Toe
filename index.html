@@ -11,18 +11,6 @@
     <title>Tic Tac Toe</title>
 </head>
 <body>
-    <div class="players-container">
-        <div class="player-box">
-            <label for="playerX">Player X</label>
-            <span>:</span>
-            <input value="Player" class="player-name" type="text" id="playerX" placeholder="Name">
-        </div>
-        <div class="player-box">
-            <label for="playerO">Player O</label>
-            <span>:</span>
-            <input value="AI" class="player-name" type="text" id="playerO" placeholder="Name">
-        </div>
-    </div>
     <div class="container-grid">
         <div class="cell disable-pointer" data-row="0" data-column="0"></div>
         <div class="cell disable-pointer" data-row="0" data-column="1"></div>
@@ -34,12 +22,21 @@
         <div class="cell disable-pointer" data-row="2" data-column="1"></div>
         <div class="cell disable-pointer" data-row="2" data-column="2"></div>
     </div>
-    <button class="start restart">Start</button>
-    <span class="material-icons">
-        perm_identity
-    </span>
-    <span class="material-icons">
-        computer
-    </span>
+    
+    <div class="before-start-container">
+        <div class="material-icons icon left"></div>
+        <div class="material-icons icon right"></div>
+
+        <div class="prompt"></div>
+
+        <div class="mode-container">
+            Mode:
+            <button class="PvP">PvP</button>
+            <button class="PvE">PvE</button>
+        </div>
+
+        <button class="play">Start</button>
+        <button class="reset">Reset</button>        
+    </div>
 </body>
 </html>
